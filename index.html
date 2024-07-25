@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOkDOw</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>       
+        <img src="logo.png" alt="Logo" id="logo"> 
+        <h1>DOkDOw</h1>
+    </header>
+    <div class="logo-empresa">
+        <img src="cdt.jpeg" alt="Logo" id="logo">
+        <p>Cdt Incorporações</p>
+    </div>
+    <main>
+        <section class="obra">
+            <div class="obra-header" onclick="toggleDocuments('manabu-docs', 'hortus-docs')">
+                <img src="MNB\mnb.jpeg" alt="Obra Manabu" class="obra-image">
+                <h2 class="obra-title">Obra Manabu</h2>
+                
+            </div>
+            <div class="document-container" id="manabu-docs">
+                <div class="document" onclick="showDownloadForm('Documento 1', 'https://drive.google.com/file/d/1nvpeXbUcegrEj0JZCRavLjS3LHqiyuev/view?usp=sharing')">
+                    <p>Aditivo MNB 2</p>
+                </div>
+                
+                <div class="document" onclick="showDownloadForm('Documento 2', 'https://drive.google.com/file/d/1Mm-qCHc0m7_4IDonmoET25NeBL7zXIxK/view?usp=sharing')">
+                    <p>Balancete MNB 2023</p>
+                </div>
+                <div class="document" onclick="showDownloadForm('Documento 2', 'https://drive.google.com/file/d/1pyzZ8rC--jRZnxjMzksOzE8YKk0ixOER/view?usp=sharing')">
+                    <p>Cartão CNPJ</p>
+                </div>
+                <div class="document" onclick="showDownloadForm('Documento 3', 'https://drive.google.com/file/d/1NgRI7pPm4mw77Slsaudbs58HeRiS0z3l/view?usp=sharing')">
+                    <p>Contato Social MNB</p>
+                </div>
+                <div class="document" onclick="showDownloadForm('Documento 4', 'https://drive.google.com/file/d/1YoBBtYQFoUwmlA_1ntpQ2GDLS5DDDoXn/view?usp=sharing')">
+                    <p>DRE MNB 2023</p>
+                </div>
+            </div>
+        </section>
+        <section class="obra">
+            <div class="obra-header" onclick="toggleDocuments('hortus-docs', 'manabu-docs')">
+                <img src="HPK\hpk.jpeg" alt="Obra Hortus Park" class="obra-image">
+                <h2 class="obra-title">Obra Hortus Park</h2>
+            </div>
+            <div class="document-container" id="hortus-docs">
+                <div class="document" onclick="showDownloadForm('Documento 6', 'https://drive.google.com/file/d/1To0TJOtF7mgVuhHpy_sjhUMO1BzaGru1/view?usp=sharing')">
+                    <p>2º Aditivo</p>
+                </div>
+                <div class="document" onclick="showDownloadForm('Documento 7', 'https://drive.google.com/file/d/1WY11nWiEQfCBsJqknpiL0v_eAzNu8j6f/view?usp=sharing')">
+                    <p>Cartão CNPJ</p>
+                </div>
+                <div class="document" onclick="showDownloadForm('Documento 9', 'https://drive.google.com/file/d/1HHlCJuONkN7MIyVj3M0myF3ECltjKRgZ/view?usp=sharing')">
+                    <p>Contrato Social</p>
+                </div>
+                <div class="document" onclick="showDownloadForm('Documento 10', 'https://drive.google.com/file/d/1twgrLtyebdRkiR5kgHV1RF_Zncs6Ho9A/view?usp=sharing')">
+                    <p>DRE e Balanço 2023</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="download-form" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeDownloadForm()">&times;</span>
+        <h4>Para liberar o download preencha as informações abaixo:</h4>
+        <form id="form" action="https://formspree.io/f/xldrdalb" method="POST">
+            <input type="hidden" id="document-id" name="document-id">
+            <input type="hidden" id="document-url" name="document-url">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Motivo do download</label>
+                <input type="text" id="reason" name="reason" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="submit-button">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+<footer class="site-footer">
+    <p>&copy; 2024 DOkDOw. Todos os direitos reservados.</p>
+</footer>
+</html>
